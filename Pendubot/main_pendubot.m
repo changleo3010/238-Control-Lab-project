@@ -10,10 +10,10 @@ q1_min = -2*pi; q1_max =  2*pi;
 q2_min = -2*pi; q2_max =  2*pi;
 dq_min = -10;   dq_max =  10;
 
-u_min  = -3;    u_max  =  3;   % 再調
+u_min  = -3;    u_max  =  3;   % 
 
 x0 = [-pi/2; 0; 0; 0];        % both links down
-xF = [pi/2; 0; 0; 0];       % first up, second down (可改)
+xF = [pi/2; 0; 0; 0];       % first up, second down 
 
 problem.func.dynamics = @(t,x,u) pendubot_dynamics(t,x,u);
 problem.func.pathObj  = @(t,x,u) u.^2;     % ∫ u^2 dt
@@ -58,7 +58,7 @@ t = soln.grid.time;
 x = soln.grid.state;
 u = soln.grid.control;
 
-animatePendubot(t, x);
+%animatePendubot(t, x);
 
 %% Plot Part A results
 figure;
@@ -67,7 +67,6 @@ subplot(5,1,2); plot(t, x(2,:), 'LineWidth',2); ylabel('\theta_2');
 subplot(5,1,3); plot(t, x(3,:), 'LineWidth',2); ylabel('\theta_1 Velocity');
 subplot(5,1,4); plot(t, x(4,:), 'LineWidth',2); ylabel('\theta_2 Velocity');
 subplot(5,1,5); plot(t, u,       'LineWidth',2); ylabel('u'); xlabel('t');
-
 %% ===========================
 %      Pendubot: Part B
 %    Open-loop ode45 check
@@ -107,8 +106,6 @@ ylabel('\theta_1 error');
 subplot(2,1,2); plot(tt_ode, pos_err2, 'LineWidth',1.5); grid on;
 ylabel('\theta_2 error'); xlabel('t');
 title('Open-loop error: OptimTraj vs ode45');
-animatePendubot(tt_ode, xx_ode)
-keyboard
 %% ===========================
 %      Pendubot: Part C
 %  TV-LQR tracking along TO
@@ -122,7 +119,7 @@ nx = 4;
 Q = diag([50 20 5 5]);
 R = 0.5;
 
-K_array = zeros(nx, N);   % 每一欄是 K_i' (4x1)
+K_array = zeros(nx, N);   % each column is storing K_i' (4x1)
 
 % --- helper: finite-difference linearization ---
 fd_eps = 1e-5;
@@ -149,7 +146,7 @@ for i = 1:N
 
     % manual LQR (no toolbox)
     K_i = manualLQR(A, B, Q, R);      % 1 x 4
-    K_array(:,i) = K_i.';             % 存成 4x1
+    K_array(:,i) = K_i.';             % save as 4x1
 end
 
 % closed-loop simulation with small initial perturbation
@@ -162,7 +159,7 @@ xx_cl = xx_cl.';
 x_nom_cl = soln.interp.state(tt_cl.');
 
 err_cl = xx_cl - x_nom_cl;
-
+animatePendubot(tt_cl, xx_cl)
 figure;
 subplot(2,1,1); hold on; grid on;
 plot(t, x(1,:), 'k-', 'LineWidth',2);

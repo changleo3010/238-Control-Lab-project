@@ -9,6 +9,7 @@ else
     slow = 1;
 end
 
+
 % link lengths
 l1 = 1.0;
 l2 = 1.0;

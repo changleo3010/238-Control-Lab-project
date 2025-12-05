@@ -2,13 +2,13 @@ function dx = pendubot_dynamics(t, x, u)
 % Vectorized Pendubot dynamics for OptimTraj
 % state x = [q1; q2; dq1; dq2], control u = shoulder torque (scalar)
 
-% ---- parameters (之後可改) ----
+% ----parameters----
 m1 = 1.0;   m2 = 1.0;
 l1 = 1.0;   l2 = 1.0;
-d1 = 0.5;   d2 = 0.5;      % COM distances
-I1 = 1/12*m1*l1^2;
-I2 = 1/12*m2*l2^2;
-g  = 9.81;
+d1 = 0.5;   d2 = 1;      % COM distances
+I1 = 0.083;%1/12*m1*l1^2;
+I2 = 0.33;%1/12*m2*l2^2;
+g  = 9.8;
 
 a1 = I1 + m1*d1^2 + I2 + m2*(l1^2 + d2^2);
 a2 = m2*l1*d2;

@@ -2,8 +2,8 @@ function dx = pendubot_dynamics_CL(t, x, soln, tGrid, K_array, u_min, u_max)
 % Closed-loop Pendubot dynamics with time-varying LQR tracking
 
 % nominal trajectory at time t
-x_nom = soln.interp.state(t);
-u_nom = soln.interp.control(t);  u_nom = u_nom(1);
+x_nom = soln.interp.state(t); x_nom = x_nom(:,end);
+u_nom = soln.interp.control(t);  u_nom = u_nom(end);
 
 % interpolate K(t)
 k1 = interp1(tGrid, K_array(1,:), t, 'linear', 'extrap');
