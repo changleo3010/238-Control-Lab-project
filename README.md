@@ -5,7 +5,8 @@ Author: Chun-yu Chang, Tianyi (Bruce) Chen ([Site](https://tybrucechen.github.io
 Category:
   * [Project 1: Mountaincar with TO](#project-1)
   * Project 2: Pendubot
-    * [TO/ LQR](#project-2)
+    * [TO/ LQR](#project-2) (LQR learn from swing-up TO trajectory, failed to keep upright states)
+    * [TO/ PFL](https://github.com/TyBruceChen/Pendubot-upright) (TO swing up, PFL take over nearing up-right to keep upright)
 
 ### Project 1: 
 ### TO controlled MountainCar ([/MountainCar/MAIN.m](/MountainCar/MAIN.m))
