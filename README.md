@@ -1,8 +1,13 @@
-For ECE 238 project 1 (MontainCar) & 2 (Pendubot)
+# For ECE 238 project 1 (MontainCar) & 2 (Pendubot)
 
-Author: Chun-yu Chang, Tianyi (Bruce) Chen
+Author: Chun-yu Chang, Tianyi (Bruce) Chen ([Site](https://tybrucechen.github.io/))
 
-Project 1: TO controlled MountainCar ([/MountainCar/MAIN.m](/MountainCar/MAIN.m))
+Category:
+  * [Project 1: Mountaincar with TO](#project-1)
+  * [Project 2: Pendubot with TO/ LQR](#project-2)
+
+### Project 1: 
+### TO controlled MountainCar ([/MountainCar/MAIN.m](/MountainCar/MAIN.m))
 
 States and Input:
 
@@ -12,7 +17,8 @@ Final State (Animation) solved by ObjectTraj:
 
 <img width="560" height="350" alt="image" src="https://github.com/user-attachments/assets/55562a99-09e9-4cc9-b6bd-33566b425efb" />
 
-Project 2: LQR optimized Pendubot ([/Pendubot/main_pendubot.m](/Pendubot/main_pendubot.m))
+### Project 2: 
+### LQR optimized Pendubot ([/Pendubot/main_pendubot.m](/Pendubot/main_pendubot.m))
 
 States and Input:
 
