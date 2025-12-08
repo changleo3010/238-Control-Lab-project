@@ -1,4 +1,4 @@
-# For ECE 238 project 1 (MontainCar) & 2 (Pendubot)
+# For ECE 238 project 1 (MontainCar) & part of 2 (Pendubot)
 
 Author: Chun-yu Chang, Tianyi (Bruce) Chen ([Site](https://tybrucechen.github.io/))
 
