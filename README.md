@@ -4,7 +4,8 @@ Author: Chun-yu Chang, Tianyi (Bruce) Chen ([Site](https://tybrucechen.github.io
 
 Category:
   * [Project 1: Mountaincar with TO](#project-1)
-  * [Project 2: Pendubot with TO/ LQR](#project-2)
+  * Project 2: Pendubot
+    * [TO/ LQR](#project-2)
 
 ### Project 1: 
 ### TO controlled MountainCar ([/MountainCar/MAIN.m](/MountainCar/MAIN.m))
