@@ -3,9 +3,6 @@
 %            Mountain Car Trajectory Optimization
 % ===========================================================
 
-% Add OptimTraj path if needed:
-% addpath(genpath('C:\Users\CHangLeo\Documents\MATLAB\OptimTraj'));
-
 %% Bounds
 pos_min = -1.2;
 pos_max =  0.6;
@@ -68,13 +65,8 @@ t = soln.grid.time;
 x = soln.grid.state;
 u = soln.grid.control;
 
-%% --------------------------------------------
-%                   ANIMATION
-% --------------------------------------------
 MountainCar_animation(t, x);
-%% --------------------------------------------
-%               PLOTS
-% --------------------------------------------
+
 figure;
 subplot(3,1,1); plot(t,x(1,:),'LineWidth',2); ylabel('Position');
 subplot(3,1,2); plot(t,x(2,:),'LineWidth',2); ylabel('Velocity');
@@ -220,7 +212,6 @@ odeFunCL = @(tt,xx) dynamics_MountainCar_CL( ...
 [tt_cl, xx_cl] = ode45(odeFunCL, [t0 tF], x0_cl);
 xx_cl = xx_cl.';                % 2xN
 
-% 對齊 nominal TO trajectory 做比較
 x_nom_interp = soln.interp.state(tt_cl.');
 
 %% Plot: nominal vs closed-loop trajectory
@@ -247,3 +238,4 @@ ylabel('Position error');
 subplot(2,1,2); plot(tt_cl, err_cl(2,:), 'LineWidth', 1.5); grid on;
 ylabel('Velocity error'); xlabel('Time');
 title('Closed-loop LQR tracking error (Mountain Car)');
+
